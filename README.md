@@ -7,13 +7,13 @@ few_shot_poll.py
 ## Clustering-based Dynamic Prompting
 * kmeans.py
 * dynamicInverse_poll.py
-## Finetune the small model
+## Finetuning the small model
 * ft_bart_en.py
 * ft_bart_ch.py
-## Train the Classifier
+## Classifier Training
 classifer_train_**.py
-## Eval
+## Evaluation
 * eval.py (BLEU, PPL)
 * classifier_metrics_**.py (WSC)
-## Transfer
+## Transferring
 bart_transfer.py
