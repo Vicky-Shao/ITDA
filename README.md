@@ -1,8 +1,8 @@
 # Lifelike-Writer
 This is the repository accompanying the paper [LIFELIKE-WRITER: Authorship Style Transfer with Inverse Knowledge Distillation].
-# Datasets
+## Datasets
 datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
-# Static Few-shot Prompting
+## Static Few-shot Prompting
 few_shot_poll.py
 # Clustering-based Dynamic Prompting
 kmean.py, 
