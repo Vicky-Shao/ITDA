@@ -1,7 +1,7 @@
 ![image](https://github.com/AnonymousRole/ITDA/assets/81413010/b0774d9c-296f-4d89-959f-187328b8c8f6)
 
-# Lifelike-Writer
-This is the repository accompanying the paper [LIFELIKE-WRITER: Authorship Style Transfer with Inverse Knowledge Distillation].
+# ITDA
+This is the offficial implementation of the paper [Authorship Style Transfer with Inverse Transfer Data Augmentation].
 ## Datasets
 datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
 ## Static Few-shot Prompting
