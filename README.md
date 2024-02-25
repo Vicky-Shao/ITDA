@@ -6,12 +6,14 @@ This is the offficial implementation of the paper [Authorship Style Transfer wit
 Authorship style transfer aims to modify the style of neutral text to match the unique speaking or writing style of a particular individual. We propose an inverse transfer data augmentation ITDA method, leveraging GPT-3.5 to create (neutral text, stylized text) pairs. We use this augmented dataset to train a BART-base model adept at style transfer. Our experimental results, conducted across four datasets with distinct authorship styles, establish the effectiveness of ITDA over style transfer using GPT-3.5.
 ## Evaluation Results
 We evaluate ITDA on four benchmarks: Lin Daiyu, Shakespeare, Trump, Lyrics. We adopt four metrics: BLEU and BS (BERTScore) measure content preservation, SC measures style transfer
-strength, and GPT-4 measures overall performance. Values in bold signify the best performance.
+strength, and GPT-4 measures overall performance. 
 ![image](https://github.com/AnonymousRole/ITDA/assets/81413010/a7db80b0-9cd9-41b4-b3c4-b55449ea96a5)
+Since user-provided text often spans a range of topics, we also collect a new test set comprising neutral texts spanning diverse topics to do out-of-distribution evaluation.
+![image](https://github.com/AnonymousRole/ITDA/assets/81413010/830dd489-3a8d-4b34-bd02-6be67f780640)
 
 ## Datasets
 datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
-## Static Few-shot Prompting
+## Fixed Few-shot Prompting
 few_shot_poll.py
 ## Clustering-based Dynamic Prompting
 * kmeans.py
@@ -23,6 +25,6 @@ few_shot_poll.py
 classifer_train_**.py
 ## Evaluation
 * eval.py (BLEU, PPL)
-* classifier_metrics_**.py (WSC)
+* classifier_metrics_**.py (SC)
 ## Transferring
 bart_transfer.py
