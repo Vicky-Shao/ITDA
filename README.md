@@ -16,13 +16,13 @@ datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
 ## Install the requirements <a name = "install"></a>
 
 First, you need to create a virtual environment and activate it:
-```ShellSession
-$ conda deactivate
-$ conda create -n <env_name> python=3.8
-$ conda activate <env_name>
+```sh
+conda deactivate
+conda create -n <env_name> python=3.8
+conda activate <env_name>
 ```
 Then, install the requirements:
-```ShellSession
+```sh
 conda install --file requirements.txt
 ```
 ## Fixed Few-shot Prompting
