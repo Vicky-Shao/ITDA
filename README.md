@@ -13,15 +13,19 @@ Since user-provided text often spans a range of topics, we also collect a new te
 
 ## Datasets
 datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
-## Install the requirements <a name = "install"></a>
 
+## Install the requirements <a name = "install"></a>
 First, you need to create a virtual environment and activate it:
 ```sh
 conda deactivate
 conda create -n <env_name> python=3.8
 conda activate <env_name>
 ```
-Then, install the requirements:
+Then, install the cuda version Pytorch：
+```sh
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1
+```
+Finally, install the requirements:
 ```sh
 conda install --file requirements.txt
 ```
