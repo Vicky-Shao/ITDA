@@ -33,6 +33,10 @@ datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
 ```sh
 python kmeans.py
 ```
+(b) Stylized Text Augmentation
+```sh
+python stylized_augmentation.py
+```
 (c) Inverse Transfer Data Augmentation
 ```sh
 python dynamicInverse_poll.py
