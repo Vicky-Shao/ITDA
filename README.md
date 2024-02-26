@@ -11,9 +11,6 @@ strength, and GPT-4 measures overall performance.
 Since user-provided text often spans a range of topics, we also collect a new test set comprising neutral texts spanning diverse topics to do out-of-distribution evaluation.
 ![image](https://github.com/AnonymousRole/ITDA/assets/81413010/830dd489-3a8d-4b34-bd02-6be67f780640)
 
-## Datasets
-datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
-
 ## Install the requirements <a name = "install"></a>
 First, you need to create a virtual environment and activate it:
 ```sh
@@ -29,18 +26,23 @@ Finally, install the requirements:
 ```sh
 conda install --file requirements.txt
 ```
-## Fixed Few-shot Prompting
-few_shot_poll.py
-## Clustering-based Dynamic Prompting
+## Stylized Datasets
+datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
+## Training
+(a) Cluster-based Demonstration Annotation
 * kmeans.py
+(c) Inverse Transfer Data Augmentation
 * dynamicInverse_poll.py
-## Finetuning the small model
+(d) Fine-tune a Compact Model
 * ft_bart_en.py
 * ft_bart_ch.py
+## Inference
+bart_transfer.py
 ## Classifier Training
-classifer_train_**.py
+classifer_train_en.py
+classifer_train_ch.py
 ## Evaluation
 * eval.py (BLEU, PPL)
 * classifier_metrics_**.py (SC)
-## Transferring
-bart_transfer.py
+## Fixed Few-shot Prompting for Fowrad Transfer with GPT-3.5
+few_shot_poll.py
