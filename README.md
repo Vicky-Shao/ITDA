@@ -30,19 +30,34 @@ conda install --file requirements.txt
 datasets/hlm, datasets/shakespeare, datasets/trump, datasets/lyrics
 ## Training
 (a) Cluster-based Demonstration Annotation
-* kmeans.py
+```sh
+python kmeans.py
+```
 (c) Inverse Transfer Data Augmentation
-* dynamicInverse_poll.py
+```sh
+python dynamicInverse_poll.py
+```
 (d) Fine-tune a Compact Model
-* ft_bart_en.py
-* ft_bart_ch.py
+```sh
+python ft_bart_en.py   #For English Datasets
+python ft_bart_ch.py   #For Chinese Datasets
+```
 ## Inference
-bart_transfer.py
+```sh
+python bart_transfer.py
+```
 ## Classifier Training
-classifer_train_en.py
-classifer_train_ch.py
+```sh
+python classifer_train_en.py  #For English Datasets
+python classifer_train_ch.py  #For Chinese Datasets
+```
 ## Evaluation
-* eval.py (BLEU, PPL)
-* classifier_metrics_**.py (SC)
+```sh
+python eval.py (BLEU, PPL)
+python classifier_metrics_**.py (SC)
+```
 ## Fixed Few-shot Prompting for Fowrad Transfer with GPT-3.5
-few_shot_poll.py
+```sh
+python few_shot_poll.py
+```
+
