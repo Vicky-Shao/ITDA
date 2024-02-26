@@ -39,7 +39,7 @@ python stylized_augmentation.py
 ```
 (c) Inverse Transfer Data Augmentation
 ```sh
-python dynamicInverse_poll.py
+python dynamic_inverse_transfer.py
 ```
 (d) Fine-tune a Compact Model
 ```sh
@@ -57,11 +57,14 @@ python classifer_train_ch.py  #For Chinese Datasets
 ```
 ## Evaluation
 ```sh
-python eval.py (BLEU, PPL)
-python classifier_metrics_**.py (SC)
+python evaluation/eval_content.py (BLEU, BERTScore)
+python evaluation/classifier_metrics_en.py (SC)   #For English Datasets
+python evaluation/classifier_metrics_ch.py (SC)   #For Chinese Datasets
+python evaluation/GPT4_judge.py (GPT-4 Score)
 ```
-## Fixed Few-shot Prompting for Fowrad Transfer with GPT-3.5
+## Fixed Prompting
+Fixed Few-shot Prompting for Fowrad Transfer or Inverse Transfer with GPT-3.5
 ```sh
-python few_shot_poll.py
+python fixed_transfer.py
 ```
 
