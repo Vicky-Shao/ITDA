@@ -35,7 +35,7 @@ def hlm_forward_prompt(text):
     prompts += "Output:倒也便宜.\n"
     prompts += "Input:就是呢，不需要过来了。\n"
     prompts += "Output:正是呢,不必过来了.\n"
-    prompts += "Intput:进来吧，外面看起来有点冷。\n"
+    prompts += "Input:进来吧，外面看起来有点冷。\n"
     prompts += "Output:进来罢,外头看起来有点冷.\n"
 
     prompts = prompts + "Input:" + text
@@ -47,18 +47,18 @@ def hlm_forward_prompt(text):
 def hlm_inverse_prompt(text):
     prompts = ''
     prompts += "Input:你大抵是倦了，竟回我这般敷行\n"
-    prompts += "Onput:你倦了，回我敷行\n"
+    prompts += "Output:你倦了，回我敷行\n"
     prompts += "Input:我心里自是明白没有别的妹妹有趣，终究哥哥心里没有我\n"
-    prompts += "Onput:没有别的妹妹有趣，哥哥心里没有我\n"
+    prompts += "Output:没有别的妹妹有趣，哥哥心里没有我\n"
     prompts += "Input:所疼者独有你母,今见了你,我怎不伤心!\n"
-    prompts += "Onput:疼爱的只有你母亲，今天见到了你，我怎么能不伤心！\n"
+    prompts += "Output:疼爱的只有你母亲，今天见到了你，我怎么能不伤心！\n"
     prompts += "Input:常服何药,如何不急为疗治?\n"
-    prompts += "Onput:经常服用的是什么药,为什么不赶紧做疗治?\n"
-    prompts += "Intput:这些人个个恭肃严整如此,这来者系谁,这样放诞无礼?\n"
+    prompts += "Output:经常服用的是什么药,为什么不赶紧做疗治?\n"
+    prompts += "Input:这些人个个恭肃严整如此,这来者系谁,这样放诞无礼?\n"
     prompts += "Output:这些人每个都像这样的恭肃严整，来的人是谁，放诞无礼到这样的地步？\n"
-    prompts += "Intput:倒也便宜.\n"
+    prompts += "Input:倒也便宜.\n"
     prompts += "Output:也还算便宜。\n"
-    prompts += "Intput:正是呢,不必过来了.\n"
+    prompts += "Input:正是呢,不必过来了.\n"
     prompts += "Output:就是呢，不需要过来了。\n"
     prompts += "Input:进来罢,外头看起来有点冷.\n"
     prompts += "Output:进来吧，外面看起来有点冷。\n"
@@ -115,7 +115,7 @@ def trump_forward_prompt(text):
     prompts = ''
     prompts += "Input:I find it unfair to my family.\n"
     prompts += "Output:I have to say this very, very unfair to my family.\n"
-    prompts += "Iuput:We can't let it happen.\n"
+    prompts += "Input:We can't let it happen.\n"
     prompts += "Output:Right? Can't let it happen, folks.\n"
     prompts += "Input:They are just a form.\n"
     prompts += "Output:Look it, they just form.\n"
