@@ -10,7 +10,7 @@ def parse_option():
     parser.add_argument('--prompt_file_name', type = str, default = "_promptLibrary.txt")
     parser.add_argument('--input_file_name', type = str, default = "_0.txt")
     parser.add_argument('--output_file_name', type = str, default = "_dynamicXY.txt")
-    parser.add_argument('--api_file_name', type = str, default = "api_5.txt")
+    parser.add_argument('--api_file_name', type = str, default = "api.txt")
     
     opt = parser.parse_args()
     return opt
@@ -63,9 +63,6 @@ def transfer():
             for i , line in enumerate(fr):
                 prompts= dynamicInversePrompts(line)
                 fw.write(prompts+'\n\n')
-                # print(generate_response(prompts)+'\n')
-                # break
-
                 # sign = 0
                 # while sign != -1:
                 #     try:
