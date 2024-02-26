@@ -78,32 +78,22 @@ def _metrics(opt):
         for i in range(total):
             outputsX = bertclassfication([textX[i]])
             outputsY = bertclassfication([textY[i]])
-            scoresX,predictX = torch.max(outputsX,1)# 这里你需要了解一下torch.max函数，详见https://www.jianshu.com/p/3ed11362b54f
-            scoresY,predictY = torch.max(outputsY,1)
             possibilityX = torch.softmax(outputsX/24, 1)
             possibilityY = torch.softmax(outputsY/24, 1)
-            # if (round(outputsY[0][1].item(), 4)-round(outputsX[0][1].item(), 4))>0.05 or ((round(outputsY[0][1].item(), 4)-round(outputsX[0][1].item(), 4))>0.01 and round(outputsX[0][1].item(), 4)>8.1):
-            # if round(outputsY[0][1].item(), 4)-round(outputsX[0][1].item(), 4)>0:
-            if (round(possibilityY.cpu().numpy()[0][1], 8)-round(possibilityX.cpu().numpy()[0][1], 8))>0:
+
+            if (round(possibilityY.cpu().numpy()[0][1], 6)-round(possibilityX.cpu().numpy()[0][1], 6))>0:
                 hit += 1
                 fw.write('Y\n')
             else:
                 fw.write('N\n')
         
-            fw.write(str(round(outputsY[0][1].item(), 8)-round(outputsX[0][1].item(), 8))+'\t')
-
-            fw.write(str(round(possibilityY.cpu().numpy()[0][1], 8)-round(possibilityX.cpu().numpy()[0][1], 8))+'\n')
-
-            fw.write(str(round((round(outputsY[0][1].item(), 8)-round(outputsX[0][1].item(), 8))*round(possibilityX.cpu().numpy()[0][1], 8), 6))+'\t\t')
-            fw.write(str(round((round(possibilityY.cpu().numpy()[0][1], 8)-round(possibilityX.cpu().numpy()[0][1], 8))*round(possibilityX.cpu().numpy()[0][1], 8), 6))+'\n')
-            metrics_total += round((round(outputsY[0][1].item(), 8)-round(outputsX[0][1].item(), 8))*round(possibilityX.cpu().numpy()[0][1], 8), 6)
+            metrics_total += round((round(possibilityY.cpu().numpy()[0][1], 8)-round(possibilityX.cpu().numpy()[0][1], 8)), 6)
 
             fw.write(str(outputsX[0][1].item())+'\t'+textX[i]+'\t')
-            fw.write(str(round(possibilityX.cpu().numpy()[0][1], 8))+'\n')
+            fw.write(str(round(possibilityX.cpu().numpy()[0][1], 6))+'\n')
             fw.write(str(outputsY[0][1].item())+'\t'+textY[i]+'\t')
-            fw.write(str(round(possibilityY.cpu().numpy()[0][1], 8))+'\n')
+            fw.write(str(round(possibilityY.cpu().numpy()[0][1], 6))+'\n')
 
-            # fw.write(str(test_targets[i])+'\t'+str(predict.item())+'\t'+str(scores.item())+'\t'+str(outputs[0][1].item())+'\t'+test_inputs[i]+'\n')
         fw.write('准确率为%.4f'%(hit/total))
         fw.write('\nmetrics_total = '+str(metrics_total))
         metrics_average = metrics_total/total
